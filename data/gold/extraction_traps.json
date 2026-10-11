@@ -1,0 +1,58 @@
+{
+  "competitor_updates": [
+    {
+      "competitor": "ValueHub",
+      "sku": "B001",
+      "price": 5.49,
+      "valid_until": null,
+      "should_use": true
+    },
+    {
+      "competitor": "ValueHub",
+      "sku": "P004",
+      "price": 4.99,
+      "valid_until": "2026-11-01",
+      "should_use": true
+    },
+    {
+      "competitor": "ValueHub",
+      "sku": "P005",
+      "price": 4.99,
+      "valid_until": "2026-11-01",
+      "should_use": true
+    },
+    {
+      "competitor": "ValueHub",
+      "sku": "C008",
+      "price": 6.99,
+      "valid_until": null,
+      "should_use": true
+    },
+    {
+      "competitor": "FreshCo",
+      "sku": "H005",
+      "price": 7.99,
+      "valid_until": "2026-10-11",
+      "should_use": false,
+      "why": "expires before promo window starts"
+    },
+    {
+      "competitor": "MegaMart",
+      "sku": "D004",
+      "price": null,
+      "valid_until": null,
+      "should_use": false,
+      "why": "unverified hearsay"
+    }
+  ],
+  "traps": [
+    "superseded_budget_in_memo",
+    "contingent_5k_not_in_budget",
+    "unverified_megamart_butter_rumour",
+    "freshco_promo_expires_before_window",
+    "diet_cola_not_checked_by_field_rep",
+    "informal_product_names (the big cola, 4 cheese)",
+    "'3 weeks in a row' + '3 items per category' limits"
+  ],
+  "missing_on_purpose": "no explicit target audience / segment guidance anywhere -> agent must infer or flag low confidence"
+}

@@ -1,0 +1,73 @@
+{
+  "planning_window": {
+    "start": "2026-10-26",
+    "end": "2026-11-29",
+    "weeks": 5
+  },
+  "marketing_budget": 59000,
+  "execution_cost_per_store_sku_week": 15.0,
+  "min_blended_promo_margin_pct": 0.21,
+  "min_sku_margin_pct": 0.12,
+  "max_discount_pct": 0.35,
+  "max_discount_by_brand": {
+    "FizzUp": 0.25,
+    "Roast Masters": 0.15,
+    "SoftRoll": 0.2
+  },
+  "max_discount_private_label": 0.3,
+  "no_promo_skus": [
+    "D001"
+  ],
+  "max_consecutive_promo_weeks": 3,
+  "max_promoted_skus_per_category_per_store_week": 3,
+  "mutually_exclusive_same_week": [
+    [
+      "B001",
+      "B002"
+    ]
+  ],
+  "promote_together": [
+    [
+      "C001",
+      "C002"
+    ]
+  ],
+  "blackouts": [
+    {
+      "sku": "P004",
+      "region": "West",
+      "until": "2026-11-09"
+    },
+    {
+      "sku": "P005",
+      "region": "West",
+      "until": "2026-11-09"
+    }
+  ],
+  "clearance_targets": [
+    {
+      "sku": "C008",
+      "stores": "all",
+      "min_sell_through_pct": 0.55
+    },
+    {
+      "sku": "P006",
+      "stores": "all",
+      "min_sell_through_pct": 0.7
+    },
+    {
+      "sku": "S008",
+      "stores": "all",
+      "min_sell_through_pct": 0.65
+    },
+    {
+      "sku": "D002",
+      "stores": [
+        "S03",
+        "S05"
+      ],
+      "min_sell_through_pct": 0.8
+    }
+  ],
+  "contingent_budget_not_to_plan_on": 5000
+}

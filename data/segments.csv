@@ -1,0 +1,5 @@
+segment_id,name,customer_share
+SEG_BARGAIN,Bargain Hunters,0.35
+SEG_FAMILY,Loyal Families,0.3
+SEG_PREMIUM,Premium Seekers,0.15
+SEG_OCCASIONAL,Occasional Shoppers,0.2

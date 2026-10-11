@@ -1,0 +1,87 @@
+{
+  "status": "Optimal",
+  "optimizer": {
+    "revenue": 639103.1249692591,
+    "gross_margin": 172923.93487495527,
+    "units_sold": 133625.88507116557,
+    "lost_sales_units": 982.7458108633257,
+    "expired_units": 89.43173558507205,
+    "writeoff_cost": 321.0599307504086,
+    "discount_investment": 40898.63230024227,
+    "promoted_store_sku_weeks": 720,
+    "execution_cost": 10800.0,
+    "marketing_spend": 51698.63230024227,
+    "gross_margin_pct": 0.27057282012706935,
+    "promo_margin_pct": 0.2267159469402314,
+    "net_contribution": 161802.87494420487,
+    "sell_through": {
+      "C008@all": 0.5625366152496584,
+      "P006@all": 0.7313690275289132,
+      "S008@all": 0.663209831100068,
+      "D002@S03+S05": 0.805583183510713
+    }
+  },
+  "flat_20pct": {
+    "revenue": 665024.1449139214,
+    "gross_margin": 94450.40171168407,
+    "units_sold": 166007.28264023812,
+    "lost_sales_units": 3955.6155993799503,
+    "expired_units": 54.15366208378818,
+    "writeoff_cost": 194.41164688079954,
+    "discount_investment": 166256.03622848034,
+    "promoted_store_sku_weeks": 1920,
+    "execution_cost": 28800.0,
+    "marketing_spend": 195056.03622848034,
+    "gross_margin_pct": 0.1420255225829574,
+    "promo_margin_pct": 0.1420255225829574,
+    "net_contribution": 65455.99006480327,
+    "sell_through": {
+      "C008@all": 0.4367989800061614,
+      "P006@all": 0.9007399310802681,
+      "S008@all": 0.726894726509928,
+      "D002@S03+S05": 0.8822746476439388
+    }
+  },
+  "no_promo": {
+    "revenue": 621324.9154052745,
+    "gross_margin": 194528.20104698325,
+    "units_sold": 124275.99523231125,
+    "lost_sales_units": 799.1462009617192,
+    "expired_units": 169.60000000000002,
+    "writeoff_cost": 608.864,
+    "discount_investment": 0.0,
+    "promoted_store_sku_weeks": 0,
+    "execution_cost": 0.0,
+    "marketing_spend": 0.0,
+    "gross_margin_pct": 0.3130861103809066,
+    "promo_margin_pct": null,
+    "net_contribution": 193919.33704698324,
+    "sell_through": {
+      "C008@all": 0.292309945616619,
+      "P006@all": 0.5920526360530045,
+      "S008@all": 0.5086458404578091,
+      "D002@S03+S05": 0.6313043478260869
+    }
+  },
+  "violations": [],
+  "hard_violations": [],
+  "solution_status": "Optimal Solution Found",
+  "clearance_slack_units": {
+    "C008@all": 0.0,
+    "P006@all": 0.0,
+    "S008@all": 0.0,
+    "D002@S03+S05": 31.511745
+  },
+  "clearance_shortfalls": {
+    "C008@all": 0.0,
+    "P006@all": 0.0,
+    "S008@all": 0.0,
+    "D002@S03+S05": 0.0
+  },
+  "sell_through": {
+    "C008@all": 0.5625366152496584,
+    "P006@all": 0.7313690275289132,
+    "S008@all": 0.663209831100068,
+    "D002@S03+S05": 0.805583183510713
+  }
+}

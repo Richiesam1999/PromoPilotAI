@@ -1,0 +1,101 @@
+{
+  "no_promo": {
+    "revenue": 621324.9154052745,
+    "gross_margin": 194528.20104698325,
+    "units_sold": 124275.99523231125,
+    "lost_sales_units": 799.1462009617192,
+    "expired_units": 169.60000000000002,
+    "writeoff_cost": 608.864,
+    "discount_investment": 0.0,
+    "promoted_store_sku_weeks": 0,
+    "execution_cost": 0.0,
+    "marketing_spend": 0.0,
+    "gross_margin_pct": 0.3130861103809066,
+    "promo_margin_pct": null,
+    "net_contribution": 193919.33704698324,
+    "sell_through": {
+      "C008@all": 0.292309945616619,
+      "P006@all": 0.5920526360530045,
+      "S008@all": 0.5086458404578091,
+      "D002@S03+S05": 0.6313043478260869
+    }
+  },
+  "flat_20pct": {
+    "revenue": 665024.1449139214,
+    "gross_margin": 94450.40171168407,
+    "units_sold": 166007.28264023812,
+    "lost_sales_units": 3955.6155993799503,
+    "expired_units": 54.15366208378818,
+    "writeoff_cost": 194.41164688079954,
+    "discount_investment": 166256.03622848034,
+    "promoted_store_sku_weeks": 1920,
+    "execution_cost": 28800.0,
+    "marketing_spend": 195056.03622848034,
+    "gross_margin_pct": 0.1420255225829574,
+    "promo_margin_pct": 0.1420255225829574,
+    "net_contribution": 65455.99006480327,
+    "sell_through": {
+      "C008@all": 0.4367989800061614,
+      "P006@all": 0.9007399310802681,
+      "S008@all": 0.726894726509928,
+      "D002@S03+S05": 0.8822746476439388
+    }
+  },
+  "flat_20pct_violations": [
+    {
+      "rule": "marketing_budget",
+      "count": 1,
+      "example": "spend $195,056 > budget $59,000"
+    },
+    {
+      "rule": "min_blended_promo_margin",
+      "count": 1,
+      "example": "promo margin 14.2% < 21%"
+    },
+    {
+      "rule": "min_sku_margin",
+      "count": 440,
+      "example": "e.g. B001 at 20%"
+    },
+    {
+      "rule": "max_discount_brand:Roast Masters",
+      "count": 40,
+      "example": "cap 15%"
+    },
+    {
+      "rule": "no_promo_sku",
+      "count": 40,
+      "example": "D001"
+    },
+    {
+      "rule": "max_consecutive_weeks",
+      "count": 384,
+      "example": "limit 3"
+    },
+    {
+      "rule": "max_skus_per_category_per_store_week",
+      "count": 240,
+      "example": "limit 3"
+    },
+    {
+      "rule": "mutually_exclusive:B001/B002",
+      "count": 40,
+      "example": ""
+    },
+    {
+      "rule": "blackout:P004@West",
+      "count": 4,
+      "example": "until 2026-11-09"
+    },
+    {
+      "rule": "blackout:P005@West",
+      "count": 4,
+      "example": "until 2026-11-09"
+    },
+    {
+      "rule": "clearance:C008@all",
+      "count": 1,
+      "example": "sell-through 44% < 55%"
+    }
+  ]
+}

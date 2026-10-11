@@ -1,0 +1,9 @@
+store_id,city,region,sq_ft
+S01,Boston,Northeast,40000
+S02,Philadelphia,Northeast,32000
+S03,Atlanta,South,44000
+S04,Dallas,South,52000
+S05,Chicago,Midwest,48000
+S06,Columbus,Midwest,28000
+S07,Seattle,West,36000
+S08,Los Angeles,West,56000

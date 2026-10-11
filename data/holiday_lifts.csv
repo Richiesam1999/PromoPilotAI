@@ -1,0 +1,24 @@
+name,category,lift
+Halloween,Snacks,0.3
+Halloween,Beverages,0.1
+Thanksgiving,Dairy_Breakfast,0.2
+Thanksgiving,Pantry_Frozen,0.3
+Thanksgiving,Beverages,0.1
+Black Friday,Household,0.25
+Black Friday,Personal_Care,0.2
+Christmas,Snacks,0.2
+Christmas,Beverages,0.15
+Christmas,Dairy_Breakfast,0.1
+Christmas,Pantry_Frozen,0.15
+New Year's Day,Beverages,0.1
+Super Bowl,Snacks,0.4
+Super Bowl,Beverages,0.25
+Super Bowl,Pantry_Frozen,0.15
+Memorial Day,Beverages,0.2
+Memorial Day,Snacks,0.15
+Memorial Day,Personal_Care,0.15
+Independence Day,Beverages,0.25
+Independence Day,Snacks,0.2
+Independence Day,Personal_Care,0.15
+Labor Day,Beverages,0.15
+Labor Day,Snacks,0.1
