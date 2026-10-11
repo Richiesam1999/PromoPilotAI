@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import json
 from dataclasses import dataclass, field
+from decimal import Decimal, InvalidOperation
 from pathlib import Path
 
 from ..config import INPUTS
@@ -185,6 +186,24 @@ def _evidence_groups(evidence):
         yield group
 
 
+def _numeric_values(text):
+    values = set()
+    for value in re.findall(r"\d+(?:[.,:/-]\d+)*(?:%)?", text):
+        percent = value.endswith("%")
+        number = value.rstrip("%")
+        if "," in number:
+            if not re.fullmatch(r"\d{1,3}(?:,\d{3})+(?:\.\d+)?", number):
+                values.add(value)
+                continue
+            number = number.replace(",", "")
+        try:
+            normalized = format(Decimal(number).normalize(), "f")
+        except InvalidOperation:
+            normalized = number
+        values.add(normalized + ("%" if percent else ""))
+    return values
+
+
 def _compact_evidence(evidence):
     for round_number in range(5):
         before = count_context_tokens(_SYSTEM, _consolidation_message(evidence))
@@ -214,11 +233,15 @@ def _compact_evidence(evidence):
         after = count_context_tokens(_SYSTEM, _consolidation_message(compacted))
         for source in {record["document"] for record in evidence}:
             original_values = {value for record in evidence if record["document"] == source
-                               for value in re.findall(r"\d+(?:[.,:/-]\d+)*(?:%)?", record["fact"])}
+                               for value in _numeric_values(record["fact"])}
             compacted_values = {value for record in compacted if record["document"] == source
-                                for value in re.findall(r"\d+(?:[.,:/-]\d+)*(?:%)?", record["fact"])}
+                                for value in _numeric_values(record["fact"])}
             if original_values != compacted_values:
-                raise ValueError("Evidence compaction changed numeric values. No extraction was saved; retry with separate policy documents.")
+                missing = ", ".join(sorted(original_values - compacted_values)[:8]) or "none"
+                added = ", ".join(sorted(compacted_values - original_values)[:8]) or "none"
+                raise ValueError(f"Evidence compaction changed numeric values in {source}: "
+                                 f"missing {missing}; added {added}. No extraction was saved. "
+                                 "Review those values or upload this policy document separately.")
         if after >= before:
             raise ValueError("Evidence could not be shortened safely. Separate distinct policy documents and retry; no extraction was saved.")
         evidence = compacted

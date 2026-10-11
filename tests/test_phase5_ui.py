@@ -499,6 +499,27 @@ def test_compaction_cannot_silently_drop_numeric_values(monkeypatch):
         }])
 
 
+def test_compaction_accepts_equivalent_number_formatting(monkeypatch):
+    import src.agents.input_agent as agent
+
+    monkeypatch.setattr(agent, "call_json", Mock(return_value={
+        "facts": [{"document": "budget.txt", "fact": "Budget: $40000.00. Cap: 25.0%. Date: 2026-11-09."}]
+    }))
+    evidence, rounds = agent._compact_evidence([{
+        "document": "budget.txt", "fact": "Budget: $40,000. Cap: 25%. Date: 2026-11-09.\n" * 1500
+    }])
+    assert rounds == 1
+    assert "40000.00" in evidence[0]["fact"]
+
+
+def test_numeric_normalization_keeps_percentages_and_dates_distinct():
+    from src.agents.input_agent import _numeric_values
+
+    assert _numeric_values("40,000 40000.00 040000") == {"40000"}
+    assert _numeric_values("25% 25.0% 0.25 2026-11-09") == {"25%", "0.25", "2026-11-09"}
+    assert _numeric_values("1,25") == {"1,25"}
+
+
 def test_compaction_stops_when_model_does_not_reduce_evidence(monkeypatch):
     import src.agents.input_agent as agent
 
